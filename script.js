@@ -2,9 +2,8 @@
   var generateBtn = document.querySelector("#generate");
 
   // // Write password to the #password input
-  function writePassword() {
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
+ function writePassword() 
+ {
   //User input
     var charNum = prompt("Choose your desired password length (Must be between 8 and 128 characters)");
     var upperLower = prompt("If you would like your password to include uppercase letters enter 'U'.  If you would like it to include lower case letters only enter 'L'.  If you would like it to include both enter 'B'.");
@@ -93,18 +92,16 @@
   
   //Eat iteration of the loop adds a random character from the string determined above.  The loops runs the number of times indicated by the number of characters in the password. 
   var password="";
-  for(i=0; i<(charNum-1); i++)
+  for(i=0; i<charNum; i++)
     {
-      randomindex=Math.floor((Math.random()*passstring.length));
-      password = password.concat(passstring[randomindex]);
+      randomindex=Math.floor((Math.random()*passstring.length)); //Gets a random index to pick from the pre-determined string
+      password = password.concat(passstring[randomindex]); //concatonates the new random character to the original string
       }
       console.log(password);
       console.log(password.length)
-    return password;
+      return password;
+      var passwordText = document.querySelector("#password");
+      passwordText.value = password;
     }
-
-
-
-
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
